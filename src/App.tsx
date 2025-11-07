@@ -7,6 +7,7 @@ import StateExample from "./StateExample";
 import ReactHookFormUncontrolled from "./ReactHookFormUncontrolled";
 import ReactHookFormControlled from "./ReactHookFormControlled";
 import ReactHookFormFieldArray from "./ReactHookFormFieldArray";
+import ZodExample from "./ZodExample";
 
 function Home() {
   const dependencies = [
@@ -14,6 +15,7 @@ function Home() {
     { name: "react-dom", version: "^19.1.1", description: "React DOM renderer" },
     { name: "react-router-dom", version: "^7.9.5", description: "Client-side routing" },
     { name: "react-hook-form", version: "^7.66.0", description: "Performant form library" },
+    { name: "zod", version: "^4.1.12", description: "TypeScript-first schema validation" },
   ];
 
   const devDependencies = [
@@ -136,6 +138,11 @@ function App() {
                   RHF Field Array
                 </button>
               </Link>
+              <Link to="/zod-example">
+                <button className="px-6 py-2 bg-violet-500 text-white rounded-lg hover:bg-violet-600 transition-colors cursor-pointer">
+                  Zod Validation
+                </button>
+              </Link>
             </div>
           </div>
         </nav>
@@ -151,6 +158,7 @@ function App() {
             <Route path="/rhf-uncontrolled" element={<ReactHookFormUncontrolled />} />
             <Route path="/rhf-controlled" element={<ReactHookFormControlled />} />
             <Route path="/rhf-field-array" element={<ReactHookFormFieldArray />} />
+            <Route path="/zod-example" element={<ZodExample />} />
           </Routes>
         </main>
       </div>

@@ -18,7 +18,6 @@ const ReactHookFormFieldArray = () => {
     register,
     control,
     handleSubmit,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     watch,
     formState: { errors },
   } = useForm<FormData>({
@@ -108,8 +107,8 @@ const ReactHookFormFieldArray = () => {
 
           <div className="space-y-4">
             {fields.map((field, index) => {
-              // const priority = watch(`tasks.${index}.priority`) || "medium";
-              const priority = field.priority || "medium";
+              const priority = watch(`tasks.${index}.priority`) || "medium";
+              // const priority = field.priority || "medium";
               const isUrgent = watch(`tasks.${index}.isUrgent`);
               return (
                 <div
