@@ -57,7 +57,7 @@ const FormDataExample = () => {
               defaultValue=""
               required
               min={1}
-              className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent ${
+              className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent ${
                 errors.count ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -76,7 +76,7 @@ const FormDataExample = () => {
               defaultValue=""
               required
               minLength={3}
-              className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent ${
+              className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent ${
                 errors.name ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -90,9 +90,9 @@ const FormDataExample = () => {
                 type="checkbox"
                 checked={hasNotes}
                 onChange={e => setHasNotes(e.target.checked)}
-                className="w-4 h-4 text-orange-600 border-gray-300 rounded focus:ring-orange-500"
+                className="w-4 h-4 text-orange-600 border-gray-300 rounded focus:outline-none focus:ring-orange-500"
               />
-              <span className="text-sm font-medium text-gray-700">Add notes?</span>
+              <span className="text-sm font-medium text-gray-700">Add notes</span>
             </label>
           </div>
           {hasNotes && (
@@ -103,7 +103,7 @@ const FormDataExample = () => {
                 placeholder="Enter your notes..."
                 defaultValue=""
                 rows={3}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               />
             </div>
           )}

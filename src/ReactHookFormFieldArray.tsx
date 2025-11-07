@@ -77,7 +77,7 @@ const ReactHookFormFieldArray = () => {
                 message: "Project name must be at least 3 characters",
               },
             })}
-            className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-transparent ${
+            className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent ${
               errors.projectName ? "border-red-500" : "border-gray-300"
             }`}
           />
@@ -146,7 +146,7 @@ const ReactHookFormFieldArray = () => {
                             message: "Title must be at least 3 characters",
                           },
                         })}
-                        className={`w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-transparent bg-white ${
+                        className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent bg-white ${
                           errors.tasks?.[index]?.title
                             ? "border-red-500"
                             : "border-gray-300"
@@ -168,7 +168,7 @@ const ReactHookFormFieldArray = () => {
                         placeholder="Task description (optional)"
                         rows={2}
                         {...register(`tasks.${index}.description`)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-transparent bg-white"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent bg-white"
                       />
                     </div>
 
@@ -179,7 +179,7 @@ const ReactHookFormFieldArray = () => {
                       </label>
                       <select
                         {...register(`tasks.${index}.priority`)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-transparent bg-white"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent bg-white"
                       >
                         <option value="low">Low</option>
                         <option value="medium">Medium</option>
@@ -193,7 +193,7 @@ const ReactHookFormFieldArray = () => {
                         <input
                           type="checkbox"
                           {...register(`tasks.${index}.isUrgent`)}
-                          className="w-4 h-4 text-cyan-600 border-gray-300 rounded focus:ring-cyan-500"
+                          className="w-4 h-4 text-cyan-600 border-gray-300 rounded focus:outline-none focus:ring-cyan-500"
                         />
                         <span className="text-sm font-medium text-gray-700">Mark as urgent?</span>
                       </label>
@@ -205,7 +205,7 @@ const ReactHookFormFieldArray = () => {
                           type="text"
                           placeholder="Why is this urgent?"
                           {...register(`tasks.${index}.urgentNote`)}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-transparent bg-white"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent bg-white"
                         />
                       </div>
                     )}

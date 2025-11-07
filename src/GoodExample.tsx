@@ -12,7 +12,7 @@ const Form = ({ handleSubmit, count, setCount, name, setName, hasNotes, setHasNo
             placeholder="Count"
             value={count}
             onChange={e => setCount(Number(e.target.value))}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
           />
         </div>
         <div>
@@ -22,7 +22,7 @@ const Form = ({ handleSubmit, count, setCount, name, setName, hasNotes, setHasNo
             placeholder="Name"
             value={name}
             onChange={e => setName(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
           />
         </div>
         <div>
@@ -31,9 +31,9 @@ const Form = ({ handleSubmit, count, setCount, name, setName, hasNotes, setHasNo
               type="checkbox"
               checked={hasNotes}
               onChange={e => setHasNotes(e.target.checked)}
-              className="w-4 h-4 text-green-600 border-gray-300 rounded focus:ring-green-500"
+              className="w-4 h-4 text-green-600 border-gray-300 rounded focus:outline-none focus:ring-green-500"
             />
-            <span className="text-sm font-medium text-gray-700">Add notes?</span>
+            <span className="text-sm font-medium text-gray-700">Add notes</span>
           </label>
         </div>
         {hasNotes && (
@@ -44,7 +44,7 @@ const Form = ({ handleSubmit, count, setCount, name, setName, hasNotes, setHasNo
               value={notes}
               onChange={e => setNotes(e.target.value)}
               rows={3}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
             />
           </div>
         )}

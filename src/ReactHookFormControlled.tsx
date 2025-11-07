@@ -62,7 +62,7 @@ const ReactHookFormControlled = () => {
                   {...field}
                   type="number"
                   placeholder="Count"
-                  className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-transparent ${
+                  className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent ${
                     errors.count ? 'border-red-500' : 'border-gray-300'
                   }`}
                 />
@@ -91,7 +91,7 @@ const ReactHookFormControlled = () => {
                   {...field}
                   type="text"
                   placeholder="Name"
-                  className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-transparent ${
+                  className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent ${
                     errors.name ? 'border-red-500' : 'border-gray-300'
                   }`}
                 />
@@ -111,9 +111,9 @@ const ReactHookFormControlled = () => {
                     type="checkbox"
                     checked={field.value}
                     onChange={e => field.onChange(e.target.checked)}
-                    className="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+                    className="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:outline-none focus:ring-indigo-500"
                   />
-                  <span className="text-sm font-medium text-gray-700">Add notes?</span>
+                  <span className="text-sm font-medium text-gray-700">Add notes</span>
                 </label>
               )}
             />
@@ -129,7 +129,7 @@ const ReactHookFormControlled = () => {
                     {...field}
                     placeholder="Enter your notes..."
                     rows={3}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
                   />
                 )}
               />

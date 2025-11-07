@@ -97,7 +97,7 @@ const StateExample = () => {
               value={count}
               onChange={handleCountChange}
               onBlur={handleCountBlur}
-              className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent ${
+              className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent ${
                 errors.count && touched.count ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -115,7 +115,7 @@ const StateExample = () => {
               value={name}
               onChange={handleNameChange}
               onBlur={handleNameBlur}
-              className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent ${
+              className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent ${
                 errors.name && touched.name ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -129,9 +129,9 @@ const StateExample = () => {
                 type="checkbox"
                 checked={hasNotes}
                 onChange={e => setHasNotes(e.target.checked)}
-                className="w-4 h-4 text-teal-600 border-gray-300 rounded focus:ring-teal-500"
+                className="w-4 h-4 text-teal-600 border-gray-300 rounded focus:outline-none focus:ring-teal-500"
               />
-              <span className="text-sm font-medium text-gray-700">Add notes?</span>
+              <span className="text-sm font-medium text-gray-700">Add notes</span>
             </label>
           </div>
           {hasNotes && (
@@ -142,7 +142,7 @@ const StateExample = () => {
                 value={notes}
                 onChange={e => setNotes(e.target.value)}
                 rows={3}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
               />
             </div>
           )}

@@ -52,7 +52,7 @@ const ZodExample = () => {
       hasNotes: false,
       notes: "",
     },
-    mode: "onBlur",
+    // mode: "onBlur",
   });
 
   const hasNotes = watch("hasNotes");
@@ -81,7 +81,7 @@ const ZodExample = () => {
               type="text"
               placeholder="email@example.com"
               {...register("email")}
-              className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-violet-500 focus:border-transparent ${
+              className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent ${
                 errors.email ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -99,7 +99,7 @@ const ZodExample = () => {
               type="number"
               placeholder="Age"
               {...register("age", { valueAsNumber: true })}
-              className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-violet-500 focus:border-transparent ${
+              className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent ${
                 errors.age ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -117,7 +117,7 @@ const ZodExample = () => {
               type="password"
               placeholder="Password"
               {...register("password")}
-              className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-violet-500 focus:border-transparent ${
+              className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent ${
                 errors.password ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -138,7 +138,7 @@ const ZodExample = () => {
               type="password"
               placeholder="Confirm Password"
               {...register("confirmPassword")}
-              className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-violet-500 focus:border-transparent ${
+              className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent ${
                 errors.confirmPassword ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -153,9 +153,9 @@ const ZodExample = () => {
               <input
                 type="checkbox"
                 {...register("hasNotes")}
-                className="w-4 h-4 text-violet-600 border-gray-300 rounded focus:ring-violet-500"
+                className="w-4 h-4 text-violet-600 border-gray-300 rounded focus:outline-none focus:ring-violet-500"
               />
-              <span className="text-sm font-medium text-gray-700">Add notes?</span>
+              <span className="text-sm font-medium text-gray-700">Add notes</span>
             </label>
           </div>
           {hasNotes && (
@@ -167,7 +167,7 @@ const ZodExample = () => {
                 placeholder="Enter your notes..."
                 {...register("notes")}
                 rows={3}
-                className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-violet-500 focus:border-transparent ${
+                className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent ${
                   errors.notes ? 'border-red-500' : 'border-gray-300'
                 }`}
               />
