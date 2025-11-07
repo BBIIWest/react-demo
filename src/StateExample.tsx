@@ -1,8 +1,10 @@
 import { useState } from "react";
 
-const ControlledValidationExample = () => {
+const StateExample = () => {
   const [count, setCount] = useState("");
   const [name, setName] = useState("");
+  const [hasNotes, setHasNotes] = useState(false);
+  const [notes, setNotes] = useState("");
   const [errors, setErrors] = useState<{ count?: string; name?: string }>({});
   const [touched, setTouched] = useState<{ count?: boolean; name?: boolean }>({});
 
@@ -77,13 +79,13 @@ const ControlledValidationExample = () => {
 
   return (
     <div className="max-w-2xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6 text-gray-800">Controlled Validation Example</h1>
+      <h1 className="text-3xl font-bold mb-6 text-gray-800">State Example (Controlled)</h1>
       <p className="text-gray-600 mb-4">
         Uses controlled inputs with real-time validation (shows errors immediately)
       </p>
 
       <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md max-w-md">
-        <h2 className="text-xl font-semibold mb-4 text-gray-800">Controlled Form with Validation</h2>
+        <h2 className="text-xl font-semibold mb-4 text-gray-800">State Form with Validation</h2>
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -121,9 +123,32 @@ const ControlledValidationExample = () => {
               <p className="mt-1 text-sm text-red-600">{errors.name}</p>
             )}
           </div>
+          <div>
+            <label className="flex items-center space-x-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={hasNotes}
+                onChange={e => setHasNotes(e.target.checked)}
+                className="w-4 h-4 text-teal-600 border-gray-300 rounded focus:ring-teal-500"
+              />
+              <span className="text-sm font-medium text-gray-700">Add notes?</span>
+            </label>
+          </div>
+          {hasNotes && (
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Notes</label>
+              <textarea
+                placeholder="Enter your notes..."
+                value={notes}
+                onChange={e => setNotes(e.target.value)}
+                rows={3}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+              />
+            </div>
+          )}
           <button
             type="submit"
-            className="w-full bg-teal-500 text-white py-2 px-4 rounded-md hover:bg-teal-600 transition-colors font-medium"
+            className="w-full bg-teal-500 text-white py-2 px-4 rounded-md hover:bg-teal-600 transition-colors font-medium cursor-pointer"
           >
             Submit
           </button>
@@ -136,4 +161,4 @@ const ControlledValidationExample = () => {
   );
 };
 
-export default ControlledValidationExample;
+export default StateExample;

@@ -3,6 +3,8 @@ import { useState } from "react";
 const BadExample = () => {
   const [count, setCount] = useState(0);
   const [name, setName] = useState('');
+  const [hasNotes, setHasNotes] = useState(false);
+  const [notes, setNotes] = useState('');
   //a bunch of stuff here, effects to fetch data etc.
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -35,9 +37,32 @@ const BadExample = () => {
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent"
             />
           </div>
+          <div>
+            <label className="flex items-center space-x-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={hasNotes}
+                onChange={e => setHasNotes(e.target.checked)}
+                className="w-4 h-4 text-red-600 border-gray-300 rounded focus:ring-red-500"
+              />
+              <span className="text-sm font-medium text-gray-700">Add notes?</span>
+            </label>
+          </div>
+          {hasNotes && (
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Notes</label>
+              <textarea
+                placeholder="Enter your notes..."
+                value={notes}
+                onChange={e => setNotes(e.target.value)}
+                rows={3}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent"
+              />
+            </div>
+          )}
           <button
             type="submit"
-            className="w-full bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition-colors font-medium"
+            className="w-full bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition-colors font-medium cursor-pointer"
           >
             Submit
           </button>

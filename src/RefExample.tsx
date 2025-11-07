@@ -1,8 +1,10 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const RefExample = () => {
   const countRef = useRef<HTMLInputElement>(null);
   const nameRef = useRef<HTMLInputElement>(null);
+  const notesRef = useRef<HTMLTextAreaElement>(null);
+  const [hasNotes, setHasNotes] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -59,9 +61,32 @@ const RefExample = () => {
               className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent border-gray-300`}
             />
           </div>
+          <div>
+            <label className="flex items-center space-x-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={hasNotes}
+                onChange={e => setHasNotes(e.target.checked)}
+                className="w-4 h-4 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
+              />
+              <span className="text-sm font-medium text-gray-700">Add notes?</span>
+            </label>
+          </div>
+          {hasNotes && (
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Notes</label>
+              <textarea
+                ref={notesRef}
+                placeholder="Enter your notes..."
+                defaultValue=""
+                rows={3}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              />
+            </div>
+          )}
           <button
             type="submit"
-            className="w-full bg-purple-500 text-white py-2 px-4 rounded-md hover:bg-purple-600 transition-colors font-medium"
+            className="w-full bg-purple-500 text-white py-2 px-4 rounded-md hover:bg-purple-600 transition-colors font-medium cursor-pointer"
           >
             Submit
           </button>
