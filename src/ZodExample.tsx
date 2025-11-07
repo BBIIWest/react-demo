@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import RenderCounter from "./RenderCounter";
 
 // Define Zod schema
 const signupFormSchema = z.object({
@@ -52,7 +53,7 @@ const ZodExample = () => {
       hasNotes: false,
       notes: "",
     },
-    // mode: "onBlur",
+    mode: "onChange",
   });
 
   const hasNotes = watch("hasNotes");
@@ -64,12 +65,18 @@ const ZodExample = () => {
 
   return (
     <div className="max-w-2xl mx-auto">
+      <div className="mb-4">
+        <RenderCounter name="ZodExample" color="violet" />
+      </div>
       <h1 className="text-3xl font-bold mb-6 text-gray-800">Zod Validation Example</h1>
       <p className="text-gray-600 mb-4">
         Uses <code className="bg-gray-100 px-1 rounded">Zod</code> for type-safe schema validation with React Hook Form
       </p>
 
       <form onSubmit={handleSubmit(onSubmit)} className="bg-white p-6 rounded-lg shadow-md max-w-md">
+        <div className="mb-3">
+          <RenderCounter name="Form" color="violet" />
+        </div>
         <h2 className="text-xl font-semibold mb-4 text-gray-800">Zod Validated Form</h2>
         <div className="space-y-4">
           {/* Email */}

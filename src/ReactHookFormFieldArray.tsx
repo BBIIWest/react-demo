@@ -1,4 +1,5 @@
 import { useForm, useFieldArray } from "react-hook-form";
+import RenderCounter from "./RenderCounter";
 
 interface Task {
   title: string;
@@ -46,6 +47,9 @@ const ReactHookFormFieldArray = () => {
 
   return (
     <div className="max-w-4xl mx-auto">
+      <div className="mb-4">
+        <RenderCounter name="ReactHookFormFieldArray" color="cyan" />
+      </div>
       <h1 className="text-3xl font-bold mb-6 text-gray-800">
         React Hook Form (Field Array)
       </h1>
@@ -58,6 +62,9 @@ const ReactHookFormFieldArray = () => {
         onSubmit={handleSubmit(onSubmit)}
         className="bg-white p-6 rounded-lg shadow-md"
       >
+        <div className="mb-3">
+          <RenderCounter name="Form" color="cyan" />
+        </div>
         <h2 className="text-xl font-semibold mb-4 text-gray-800">
           Project Task Manager
         </h2>

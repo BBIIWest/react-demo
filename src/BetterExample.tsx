@@ -5,7 +5,7 @@ const Form = ({ handleSubmit, count, setCount, name, setName, hasNotes, setHasNo
   return (
     <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md max-w-md">
       <div className="mb-3">
-        <RenderCounter name="Form (outside GoodExample)" color="green" />
+        <RenderCounter name="Form (outside BetterExample)" color="green" />
       </div>
       <h2 className="text-xl font-semibold mb-4 text-gray-800">Form Component</h2>
       <div className="space-y-4">
@@ -63,7 +63,7 @@ const Form = ({ handleSubmit, count, setCount, name, setName, hasNotes, setHasNo
   );
 };
 
-const GoodExample = () => {
+const BetterExample = () => {
   const [count, setCount] = useState(0);
   const [name, setName] = useState('');
   const [hasNotes, setHasNotes] = useState(false);
@@ -78,9 +78,9 @@ const GoodExample = () => {
   return (
     <div className="max-w-2xl mx-auto">
       <div className="mb-4">
-        <RenderCounter name="GoodExample" color="green" />
+        <RenderCounter name="BetterExample" color="green" />
       </div>
-      <h1 className="text-3xl font-bold mb-6 text-gray-800">Good Example</h1>
+      <h1 className="text-3xl font-bold mb-6 text-gray-800">Better Example</h1>
       <p className="text-gray-600 mb-4">Component defined outside parent (proper pattern)</p>
       <Form
         handleSubmit={handleSubmit}
@@ -97,4 +97,4 @@ const GoodExample = () => {
   );
 };
 
-export default GoodExample;
+export default BetterExample;

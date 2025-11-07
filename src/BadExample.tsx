@@ -1,6 +1,8 @@
 import { useState } from "react";
+import RenderCounter from "./RenderCounter";
 
 const BadExample = () => {
+  console.log('BadExample rendered at', new Date().toISOString());
   const [count, setCount] = useState(0);
   const [name, setName] = useState('');
   const [hasNotes, setHasNotes] = useState(false);
@@ -15,6 +17,9 @@ const BadExample = () => {
   const Form = () => {
     return (
       <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md max-w-md">
+        <div className="mb-3">
+          <RenderCounter name="Form (inside BadExample)" color="red" />
+        </div>
         <h2 className="text-xl font-semibold mb-4 text-gray-800">Form Component</h2>
         <div className="space-y-4">
           <div>
@@ -74,6 +79,9 @@ const BadExample = () => {
 
   return (
     <div className="max-w-2xl mx-auto">
+      <div className="mb-4">
+        <RenderCounter name="BadExample" color="red" />
+      </div>
       <h1 className="text-3xl font-bold mb-6 text-gray-800">Bad Example</h1>
       <p className="text-gray-600 mb-4">Component defined inside parent (causes re-renders)</p>
       <Form />

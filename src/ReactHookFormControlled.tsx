@@ -1,4 +1,5 @@
 import { useForm, Controller } from "react-hook-form";
+import RenderCounter from "./RenderCounter";
 
 interface FormData {
   count: string;
@@ -32,12 +33,18 @@ const ReactHookFormControlled = () => {
 
   return (
     <div className="max-w-2xl mx-auto">
+      <div className="mb-4">
+        <RenderCounter name="ReactHookFormControlled" color="indigo" />
+      </div>
       <h1 className="text-3xl font-bold mb-6 text-gray-800">React Hook Form (Controlled)</h1>
       <p className="text-gray-600 mb-4">
         Uses react-hook-form with controlled inputs via <code className="bg-gray-100 px-1 rounded">Controller</code>
       </p>
 
       <form onSubmit={handleSubmit(onSubmit)} className="bg-white p-6 rounded-lg shadow-md max-w-md">
+        <div className="mb-3">
+          <RenderCounter name="Form" color="indigo" />
+        </div>
         <h2 className="text-xl font-semibold mb-4 text-gray-800">React Hook Form (Controlled)</h2>
         <div className="space-y-4">
           <div>

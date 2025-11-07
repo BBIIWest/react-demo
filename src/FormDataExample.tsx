@@ -1,4 +1,5 @@
 import { useState } from "react";
+import RenderCounter from "./RenderCounter";
 
 const FormDataExample = () => {
   const [errors, setErrors] = useState<{ count?: string; name?: string }>({});
@@ -38,12 +39,18 @@ const FormDataExample = () => {
 
   return (
     <div className="max-w-2xl mx-auto">
+      <div className="mb-4">
+        <RenderCounter name="FormDataExample" color="orange" />
+      </div>
       <h1 className="text-3xl font-bold mb-6 text-gray-800">FormData Example (Uncontrolled)</h1>
       <p className="text-gray-600 mb-4">
         Uses FormData API to access form values (no refs, no state)
       </p>
 
       <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md max-w-md">
+        <div className="mb-3">
+          <RenderCounter name="Form" color="orange" />
+        </div>
         <h2 className="text-xl font-semibold mb-4 text-gray-800">FormData Form</h2>
         <div className="space-y-4">
           <div>

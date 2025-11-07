@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import BadExample from "./BadExample";
-import GoodExample from "./GoodExample";
+import BetterExample from "./BetterExample";
 import RefExample from "./RefExample";
 import FormDataExample from "./FormDataExample";
 import StateExample from "./StateExample";
@@ -8,6 +8,7 @@ import ReactHookFormUncontrolled from "./ReactHookFormUncontrolled";
 import ReactHookFormControlled from "./ReactHookFormControlled";
 import ReactHookFormFieldArray from "./ReactHookFormFieldArray";
 import ZodExample from "./ZodExample";
+import RenderCounter from "./RenderCounter";
 
 function Home() {
   const dependencies = [
@@ -87,10 +88,14 @@ function Home() {
 }
 
 function App() {
+  console.log('App rendered at', new Date().toISOString());
   return (
     <BrowserRouter>
       <div className="min-h-screen bg-gray-50">
-        <nav className="bg-white shadow-md mb-8">
+        <div className="container mx-auto px-4 pt-4">
+          <RenderCounter name="App" color="gray" />
+        </div>
+        <nav className="bg-white shadow-md mb-8 mt-4">
           <div className="container mx-auto px-4 py-4">
             <div className="flex gap-4 justify-center flex-wrap">
               <Link to="/">
@@ -103,9 +108,9 @@ function App() {
                   Bad Example
                 </button>
               </Link>
-              <Link to="/good-example">
+              <Link to="/better-example">
                 <button className="px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors cursor-pointer">
-                  Good Example
+                  Better Example
                 </button>
               </Link>
               <Link to="/ref-example">
@@ -151,7 +156,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/bad-example" element={<BadExample />} />
-            <Route path="/good-example" element={<GoodExample />} />
+            <Route path="/better-example" element={<BetterExample />} />
             <Route path="/ref-example" element={<RefExample />} />
             <Route path="/formdata-example" element={<FormDataExample />} />
             <Route path="/state-example" element={<StateExample />} />

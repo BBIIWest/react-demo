@@ -1,4 +1,5 @@
 import { useState } from "react";
+import RenderCounter from "./RenderCounter";
 
 const StateExample = () => {
   const [count, setCount] = useState("");
@@ -79,12 +80,18 @@ const StateExample = () => {
 
   return (
     <div className="max-w-2xl mx-auto">
+      <div className="mb-4">
+        <RenderCounter name="StateExample" color="teal" />
+      </div>
       <h1 className="text-3xl font-bold mb-6 text-gray-800">State Example (Controlled)</h1>
       <p className="text-gray-600 mb-4">
         Uses controlled inputs with real-time validation (shows errors immediately)
       </p>
 
       <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md max-w-md">
+        <div className="mb-3">
+          <RenderCounter name="Form" color="teal" />
+        </div>
         <h2 className="text-xl font-semibold mb-4 text-gray-800">State Form with Validation</h2>
         <div className="space-y-4">
           <div>
